@@ -1,3 +1,5 @@
-language: generic
+language: python
+ - "2.7"
+ - "2.6"
 script:
-   - bash -e ./test.bash
+   - bash ./test.bash
