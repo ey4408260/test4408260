@@ -55,7 +55,8 @@ echo "10 20"
 A=10
 B=20
 
-./kadai2 $A $B > $tmp
+./kadai2 $A $B > $tmp && echo "Status is $?"
+
 gcd=`cat $tmp`
 
 PARAM_CHECK $gcd
@@ -67,7 +68,8 @@ echo "3304 242"
 A=3304
 B=242
 
-./kadai2 $A $B > $tmp
+./kadai2 $A $B > $tmp && echo "Status is $?"
+
 gcd=`cat $tmp`
 
 PARAM_CHECK $gcd
@@ -79,7 +81,7 @@ echo "189010 32000"
 A=189010
 B=32000
 
-./kadai2 $A $B > $tmp
+./kadai2 $A $B > $tmp && echo "Status is $?"
 gcd=`cat $tmp`
 
 PARAM_CHECK $gcd
@@ -93,8 +95,6 @@ B=32000
 
 ./kadai2 $A $B > $tmp || ERROR_EXIT "Expected Integer"
 gcd=`cat $tmp`
-
-PARAM_CHECK $gcd
 
 rm out
 echo "ALL TEST IS DONE "
