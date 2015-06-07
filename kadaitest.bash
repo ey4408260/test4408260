@@ -1,7 +1,10 @@
 #!/bin/bash
 
 tmp=out
-
+ERROR_EXIT(){
+	echo "$1" >&2
+	rm out
+}
 
 PARAM_CHECK()
 {
@@ -38,7 +41,7 @@ PARAM_CHECK $gcd
 #########################################
 echo "10"
 A=10
-./kadai2 $A $B $C > $tmp
+./kadai2 $A > $tmp
 gcd=`cat $tmp`
 
 PARAM_CHECK $gcd
@@ -83,14 +86,15 @@ CHECK $A $B $gcd
 ###########################################
 #Fail test
 ###########################################
-echo "aiit 32000"
+echo "aiit 32000 going to fail"
 A=aiit
 B=32000
 
-./kadai2 $A $B > $tmp
+./kadai2 $A $B > $tmp || ERROR_EXIT "Expected Integer"
 gcd=`cat $tmp`
 
 PARAM_CHECK $gcd
 
-echo "ALL TEST IS DONE "
 rm out
+echo "ALL TEST IS DONE "
+
