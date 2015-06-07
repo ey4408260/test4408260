@@ -80,8 +80,17 @@ gcd=`cat $tmp`
 
 PARAM_CHECK $gcd
 CHECK $A $B $gcd
+###########################################
+#Fail test
+###########################################
+echo "aiit 32000"
+A=aiit
+B=32000
 
+./kadai2 $A $B > $tmp
+gcd=`cat $tmp`
 
+PARAM_CHECK $gcd
 
 echo "ALL TEST IS DONE "
 rm out
