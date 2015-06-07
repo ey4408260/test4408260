@@ -1,5 +1,3 @@
-language: python
- - "2.7"
- - "2.6"
+language: generic
 script:
-   - bash ./test.bash
+   - bash -e ./kadaitest.bash
