@@ -1,3 +1,3 @@
 language: generic
 script:
-   - bash -e ./15745149
+   - bash -e ./kadaitest.bash
