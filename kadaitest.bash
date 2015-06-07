@@ -2,8 +2,9 @@
 
 tmp=out
 ERROR_EXIT(){
+	echo "Status is $?"
 	echo "$1" >&2
-	rm out
+
 }
 
 PARAM_CHECK()
