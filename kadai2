@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ ${#} -ne 2 ]
+then
+	echo 0
+else
+	if [ ${1} -ge ${2} ]
+	then 
+		A=${1}
+		B=${2}
+	else
+		A=${2}
+		B=${1}
+	fi
+
+	M=$((A%B))
+
+	until [ ${M} -eq 0 ]
+	do
+		A=$((B))
+		B=$((M))
+		M=$((A%B))
+	done
+
+	echo ${B}
+fi
+
